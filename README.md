@@ -1,2 +1,1 @@
-# CS3753
-CU csci3753
+### Mengyu Wu
