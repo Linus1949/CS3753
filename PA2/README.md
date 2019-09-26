@@ -6,14 +6,14 @@ Email: mewu0016@colorado.edu
 
 ### Submission Contens: Enter /home/kernel/linux-hwe-4.15.0
 
-1. simple_char_driveer.c
+1. simple_char_driver.c
   
     Implementation of Device Deriver to handle Device files by Major number and control the physical devices and included
     Read(), Write(), Open(), Close() and llseek().
         
 2. Makefile
     
-    Adjusting Makefile in order to let simple_char_driveer.c are compiled to .o files.
+    Adjusting Makefile in order to let simple_char_driver.c are compiled to .o files.
     
 3. /dev/simple_character_device
 
