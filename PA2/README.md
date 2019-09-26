@@ -30,7 +30,7 @@ Email: mewu0016@colorado.edu
 
       "sudo make -C /lib/modules/$(uname -r)/build M=$PWD modules" to compile module files
       
-      "sudo insmod charDev.ko" to load the module to kernel
+      "sudo insmod simple_char_driver.ko" to load the module to kernel
       
       "sudo mknod -m 777 /dev/simple_character_device c 240 0" to create device file in /dev
       
