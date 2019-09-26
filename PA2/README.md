@@ -10,12 +10,16 @@ Email: mewu0016@colorado.edu
   
     Implementation of Device Deriver to handle Device files by Major number and control the physical devices and included
     Read(), Write(), Open(), Close() and llseek().
-      
-2. /dev/simple_character_device
+        
+2. Makefile
+    
+    Adjusting Makefile in order to let simple_char_driveer.c are compiled to .o files.
+    
+3. /dev/simple_character_device
 
     Implementation of Devicee file to handle sginal from user space and send file-operations to Devie Driver with major number
     
-3. simple_char_test.c
+4. simple_char_test.c
   
     Implementation of a interface for user to send file operations and through the device file send to deriver file.
     
