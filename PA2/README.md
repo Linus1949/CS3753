@@ -4,7 +4,7 @@ SID: 107207928
 
 Email: mewu0016@colorado.edu
 
-### Submission Contens: Enter /home/kernel/linux-hwe-4.15.0
+### Submission Contens: Enter /home/kernel/linux-hwe-4.15.0/modules
 
 1. simple_char_driver.c
   
