@@ -40,4 +40,5 @@ Email: mewu0016@colorado.edu
       
 4. remove the module
     "sudo rmmod simplee_char_driver" to remove the module from kernel
-     "sudo rm /dev/charDev" to remove device file
+    
+    "sudo rm /dev/charDev" to remove device file
