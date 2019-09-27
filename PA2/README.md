@@ -39,6 +39,7 @@ Email: mewu0016@colorado.edu
 3. After test process, enter "dmesg" to check the information print in kernel
       
 4. remove the module
+
     "sudo rmmod simplee_char_driver" to remove the module from kernel
     
     "sudo rm /dev/charDev" to remove device file
