@@ -12,7 +12,7 @@ MODULE_LICENSE("GPL");
 /* Define device_buffer and other global data structures you will need here */
 int openCounter = 0;
 int closeCounter = 0;
-static char device_buffer[BUFFER_SIZE];
+char* device_buffer;
 
 
 ssize_t simple_char_driver_read (struct file *pfile, char __user *buffer, size_t length, loff_t *offset)
@@ -132,7 +132,7 @@ static int simple_char_driver_init(void)
 	/* print to the log file that the init function is called.*/
 	printk(KERN_ALERT "inside %s function\n",__FUNCTION__);
 	/* allocate memory for buffer initialization */
-	kmalloc(BUFFER_SIZE, GFP_KERNEL);
+	device_buffer = kmalloc(BUFFER_SIZE, GFP_KERNEL);
 	/* register the device */
 	register_chrdev(MAJOR_NUMBER,MY_DEVICE_NAME,&simple_char_driver_file_operations);
 	return 0;
