@@ -6,7 +6,8 @@
 #include <unistd.h>
 #define DEVICE "/dev/simple_character_device"
 #define BUFFER_SIZE 1024
-int debug = 1, fd = 0;
+int debug = 1;
+int fd = 0;
 int ppos = 0;
 
 
@@ -81,7 +82,7 @@ int lseek_device(){
 
 int main(){
 	char choice;
-
+	fd = open(DEVICE, O_RDWR | O_APPEND);
 	while(choice!='e'){
 		printf("\
 				 Press r to read from device\n\
@@ -93,20 +94,18 @@ int main(){
 		scanf("%s",&choice);
 		switch(choice){
 			case 'w': printf("Write option selected\n");
-					fd = open(DEVICE,O_RDWR);
 					write_device();
 					break;
 			case 'r': printf("Read option selected\n");
-					fd = open(DEVICE,O_RDWR);
 					read_device();
 					break;
 			case 's': printf("Read option selected\n");
-					fd = open(DEVICE,O_RDWR);
 					lseek_device();
 					break;
 			case 'e': printf("Quite the testapp\n");
 					break;
 		}
 	}
+	close(fd);
 	return 0;
 }
