@@ -53,13 +53,14 @@ ssize_t simple_char_driver_write (struct file *pfile, const char __user *buffer,
 	int bytesToWrite;							/* the number of bytes to write */
 	int maxBytes = BUFFER_SIZE - *offset; 		/* maximum bytes that can be read from offset to BUFFER_SIZE */
 	/* if maximum bytes over the number of space available in user buff */
+	int offsetPos = device_buffer + *offset;
 	if(maxBytes > length){
 		bytesToWrite = length;
 	}
 	else{
-		bytesToWrite = maxBytes;
+		offsetPos -= *offset;        /* if buffer remaining space is not enough, we need to back to begin and overwrite */
 	}
-	bytesWrite = bytesToWrite - copy_from_user(device_buffer + *offset, buffer, bytesToWrite); /* get bytes read by subtract the uncopy bytes (copy_from_user) */
+	bytesWrite = bytesToWrite - copy_from_user(offsetPos, buffer, bytesToWrite); /* get bytes read by subtract the uncopy bytes (copy_from_user) */
 	printk(KERN_ALERT "%d bytes written in the file\n", bytesWrite);
 	*offset += bytesWrite; /* update the current position until reache the end of the file */
 
